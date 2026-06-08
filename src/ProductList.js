@@ -4,7 +4,7 @@ import "./App.css";
 const ProductList = () => {
 const [products, setProducts] =
 useState([]);
-const [selectedProduct, setSelectedProduct] = useState(null);
+const [selectedProduct, setSelectedProduct] = useState();
 
 const [search, setSearch] = useState("");
 const [currentPage, setCurrentPage] = useState(1);
@@ -23,9 +23,10 @@ setDarkMode(true);
       }, [darkMode]);
     const fetchProducts = async() => {
       try {
+       const API_URL = process.env.REACT_APP_API_URL;
   const response = await
   axios
-  .get("http://localhost:4000/products");
+  .get(`${API_URL}/products`);
   console.log(response.data);
   setProducts(response.data);
     
@@ -63,7 +64,7 @@ if (!confirmDelete) {
   return;
 
 }
-    await axios.delete(`http://localhost:4000/products/${id}`);
+    await axios.delete(`${API_URL}/products/${id}`);
     setProducts(products.filter((product) => product._id !== id
   )
 );
@@ -74,7 +75,7 @@ if (!confirmDelete) {
 };
 const updateQuantity = async (id, quantity) => {
   try {
-     await axios.put(`http://localhost:4000/products/${id}`,
+     await axios.put(`${API_URL}/products/${id}`,
       {
         quantity: Number(quantity)
       }
@@ -94,7 +95,7 @@ const updateStatus = async(id, newStatus) => {
   
   try {
     
-    await axios.put(`http://localhost:4000/products/${id}`, {
+    await axios.put(`${API_URL}/products/${id}`, {
       status: newStatus,
     });
     fetchProducts();
