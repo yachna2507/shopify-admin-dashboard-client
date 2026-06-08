@@ -10,8 +10,9 @@ const OrdersList = () => {
     const [Orders, setOrders] = useState([]);
     const fetchOrders = async() => {
         try {
+                const API_URL = process.env.REACT_APP_API_URL;
             const response = await axios.get(
-                "http://localhost:4000/sync-orders"
+                "${API_URL}/sync-orders"
             );
             console.log(response.data);
             setOrders(response.data);
