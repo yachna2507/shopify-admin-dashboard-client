@@ -12,7 +12,7 @@ const OrdersList = () => {
         try {
                 
             const response = await axios.get(
-                "/sync-orders"
+                "sync-orders"
             );
             console.log(response.data);
             setOrders(response.data);
