@@ -7,7 +7,7 @@ import React,
     from "react";
 import axios from "axios";
 const OrdersList = () => {
-    const [Orders, setOrders] = useState([]);
+    const [orders, setOrders] = useState([]);
     const fetchOrders = async() => {
         try {
                 
@@ -15,7 +15,7 @@ const OrdersList = () => {
                 `${process.env.REACT_APP_API_URL}/sync-orders`
             );
             console.log("API Response:", response.data);
-            setOrders(response.data.orders || []);
+            setOrders(response.data || []);
         } catch(error) {
             console.log(error);  
          setOrders([]);
@@ -36,11 +36,10 @@ const OrdersList = () => {
                         <th>Status</th>
                     </tr></thead>
                     <tbody>
-                        {orders && orders.length > 0 ? (
-                         orders.map(order => (
+                        {orders.map(order => (
                             <tr key={order._id}>
                                 <td> {
-                                order.customerName || "guest"
+                                order.customerName 
                                 }
                           </td>
                     <td>
