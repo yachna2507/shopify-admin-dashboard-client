@@ -31,8 +31,9 @@ const OrdersList = () => {
                 <thead>
                      <tr>
                         <th>Customer</th>
-                        <th>Email</th>
+                        <th>Product Name</th>
                         <th>Total Price</th>
+     <th>Quantity</th>
                         <th>Status</th>
                     </tr></thead>
                     <tbody>
