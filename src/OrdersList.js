@@ -36,7 +36,8 @@ const OrdersList = () => {
                         <th>Status</th>
                     </tr></thead>
                     <tbody>
-                        {orders.map((order) => (
+                        {orders && orders.length > 0 ? (
+                         orders.map(order => (
                             <tr key={order._id}>
                                 <td> {
                                 order.customerName || "guest"
