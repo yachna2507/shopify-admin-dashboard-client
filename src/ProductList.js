@@ -23,10 +23,10 @@ setDarkMode(true);
       }, [darkMode]);
     const fetchProducts = async() => {
       try {
-       const API_URL = process.env.REACT_APP_API_URL;
+       
   const response = await
   axios
-  .get(`${API_URL}/products`);
+  .get(`${process.env.REACT_APP_API_URL}/products`);
   console.log(response.data);
   setProducts(response.data);
     
@@ -64,7 +64,7 @@ if (!confirmDelete) {
   return;
 
 }
-    await axios.delete(`${API_URL}/products/${id}`);
+    await axios.delete(`${process.env.REACT_APP_API_URL}/products/${id}`);
     setProducts(products.filter((product) => product._id !== id
   )
 );
@@ -76,7 +76,7 @@ if (!confirmDelete) {
 const updateQuantity = async (id, quantity) => {
   try {
    console.log("Updating:", id, quantity);
-     await axios.put(`${API_URL}/products/${id}`,
+     await axios.put(`${process.env.REACT_APP_API_URL}/products/${id}`,
       {
         quantity: Number(quantity)
       }
@@ -96,7 +96,7 @@ const updateStatus = async(id, newStatus) => {
   
   try {
     
-    await axios.put(`${API_URL}/products/${id}`, {
+    await axios.put(`${process.env.REACT_APP_API_URL}/products/${id}`, {
       status: newStatus,
     });
     fetchProducts();
