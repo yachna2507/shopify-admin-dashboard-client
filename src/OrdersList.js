@@ -14,10 +14,11 @@ const OrdersList = () => {
             const response = await axios.get(
                 `${process.env.REACT_APP_API_URL}/sync-orders`
             );
-            console.log(response.data);
-            setOrders(response.data);
+            console.log("API Response:", response.data);
+            setOrders(response.data.orders || []);
         } catch(error) {
-            console.log(error);            
+            console.log(error);  
+         setOrders([]);
         }
     };
     useEffect(() => {
