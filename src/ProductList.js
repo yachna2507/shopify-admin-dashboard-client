@@ -276,7 +276,7 @@ const updateStatus = async(id, newStatus) => {
           
      
           <button onClick={() =>
-            deleteProduct(products._id)
+            deleteProduct(product._id)
           }
           style={{
             background: "red",
