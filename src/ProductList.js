@@ -58,6 +58,8 @@ const outOfStock = filteredProducts.filter((product) => product.quantity === 0).
 
 //delete
 const deleteProduct = async(id) => {
+ console.log("ID aa rhi hai:", id);
+}
   try {
     const confirmDelete = window.confirm("Are you sure you want to delete?");
 if (!confirmDelete) {
