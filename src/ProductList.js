@@ -75,6 +75,7 @@ if (!confirmDelete) {
 };
 const updateQuantity = async (id, quantity) => {
   try {
+   console.log("Updating:", id, quantity);
      await axios.put(`${API_URL}/products/${id}`,
       {
         quantity: Number(quantity)
