@@ -33,7 +33,7 @@ const OrdersList = () => {
                         <th>Customer</th>
                         <th>Product Name</th>
                         <th>Total Price</th>
-     <th>Quantity</th>
+                        <th>Quantity</th>
                         <th>Status</th>
                     </tr></thead>
                     <tbody>
