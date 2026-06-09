@@ -37,18 +37,18 @@ const OrdersList = () => {
                     </tr></thead>
                     <tbody>
                         {orders.map((order) => (
-                            <tr key={order.id}>
+                            <tr key={order._id}>
                                 <td> {
-                                order.customer || "guest"
-                                
-}
+                                order.customerName || "guest"
+                                }
+                          </td>
+                    <td>
+                   {order.product_name}
+              </td>
+             <td>
+    ₹ {order.Price || 0}
 </td>
-<td>
-    {order.email}
-</td>
-<td>
-    ₹ {order.totalPrice || 0}
-</td>
+ <td>{order.quantity}</td>
 <td>
     <span style={{
         padding:"5px 10px",
@@ -60,7 +60,7 @@ const OrdersList = () => {
     }}
     >
     {
-        order.financialStatus
+        order.status
     }
     </span>
 </td>
