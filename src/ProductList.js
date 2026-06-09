@@ -60,20 +60,17 @@ const outOfStock = filteredProducts.filter((product) => product.quantity === 0).
 const deleteProduct = async(id) => {
  console.log("API URL:", process.env.REACT_APP_API_URL);
  console.log("ID aa rhi hai:", id);
-}
-  try {
+try {
     const confirmDelete = window.confirm("Are you sure you want to delete?");
 if (!confirmDelete) {
   return;
-
 }
-    await axios.delete(`${process.env.REACT_APP_API_URL}/products/${id}`);
+ await axios.delete(`${process.env.REACT_APP_API_URL}/products/${id}`);
     setProducts(products.filter((product) => product._id !== id
   )
 );
   } catch (error) {
     console.log(error);
-  
   }
 };
 const updateQuantity = async (id, quantity) => {
