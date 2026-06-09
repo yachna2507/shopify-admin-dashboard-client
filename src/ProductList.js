@@ -58,6 +58,7 @@ const outOfStock = filteredProducts.filter((product) => product.quantity === 0).
 
 //delete
 const deleteProduct = async(id) => {
+ console.log("API URL:", process.env.REACT_APP_API_URL);
  console.log("ID aa rhi hai:", id);
 }
   try {
