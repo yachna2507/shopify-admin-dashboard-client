@@ -36,7 +36,7 @@ const OrdersList = () => {
                         <th>Status</th>
                     </tr></thead>
                     <tbody>
-                        {Orders.map((order) => (
+                        {orders.map((order) => (
                             <tr key={order.id}>
                                 <td> {
                                 order.customer || "guest"
