@@ -46,9 +46,9 @@ const OrdersList = () => {
                    {order.product_name}
               </td>
              <td>
-    ₹ {order.Price || 0}
+    ₹ {order.price || 0}
 </td>
- <td>{order.quantity}</td>
+ <td>{order.quantity || 1}</td>
 <td>
     <span style={{
         padding:"5px 10px",
